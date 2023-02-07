@@ -59,7 +59,7 @@ def start(update, context):
     else:
         start_string = '🌹 Welcome To One Of A Modified Anasty Mirror Bot\n' \
                     'This bot can Mirror all your links To Google Drive!\n' \
-                    '👨🏽‍💻 Powered By: @JMDKH_Team'
+                    '👨🏽‍💻 Powered By: TaKu'
     sendMessage(start_string, context.bot, update.message)
 
 def restart(update, context):
