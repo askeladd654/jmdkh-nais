@@ -534,8 +534,8 @@ if path.exists('categories.txt'):
                 tempdict['index_link'] = ''
             categories[name] = tempdict
 
-if BASE_URL:
-    Popen(f"gunicorn web.wserver:app --bind 0.0.0.0:{SERVER_PORT}", shell=True)
+
+Popen(f"gunicorn web.wserver:app --bind 0.0.0.0:{SERVER_PORT}", shell=True)
 
 run(["qbittorrent-nox", "-d", "--profile=."])
 if not path.exists('.netrc'):
