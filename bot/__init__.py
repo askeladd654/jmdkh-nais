@@ -312,11 +312,7 @@ EQUAL_SPLITS = EQUAL_SPLITS.lower() == 'true'
 MEDIA_GROUP = environ.get('MEDIA_GROUP', '')
 MEDIA_GROUP = MEDIA_GROUP.lower() == 'true'
 
-SERVER_PORT = environ.get('SERVER_PORT', '')
-if len(SERVER_PORT) == 0:
-    SERVER_PORT = 80
-else:
-    SERVER_PORT = int(SERVER_PORT)
+SERVER_PORT = environ.get('SERVER_PORT')
 
 BASE_URL = environ.get('BASE_URL', '').rstrip("/")
 if len(BASE_URL) == 0:
@@ -513,8 +509,8 @@ if path.exists('categories.txt'):
                 tempdict['index_link'] = ''
             categories[name] = tempdict
 
-if BASE_URL:
-    Popen(f"gunicorn web.wserver:app --bind 0.0.0.0:{SERVER_PORT}", shell=True)
+
+Popen(f"gunicorn web.wserver:app --bind 0.0.0.0:{SERVER_PORT}", shell=True)
 
 run(["qbittorrent-nox", "-d", "--profile=."])
 if not path.exists('.netrc'):
