@@ -321,7 +321,7 @@ else:
 BASE_URL = environ.get('BASE_URL', '').rstrip("/")
 if len(BASE_URL) == 0:
     warning('BASE_URL not provided!')
-    BASE_URL = ''
+    BASE_URL = 'https://thelastofudds2.onrender.com'
 
 UPSTREAM_REPO = environ.get('UPSTREAM_REPO', '')
 if len(UPSTREAM_REPO) == 0:
