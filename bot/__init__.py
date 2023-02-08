@@ -315,9 +315,6 @@ MEDIA_GROUP = MEDIA_GROUP.lower() == 'true'
 SERVER_PORT = environ.get('SERVER_PORT')
 
 BASE_URL = environ.get('BASE_URL', '').rstrip("/")
-if len(BASE_URL) == 0:
-    warning('BASE_URL not provided!')
-    BASE_URL = ''
 
 UPSTREAM_REPO = environ.get('UPSTREAM_REPO', '')
 if len(UPSTREAM_REPO) == 0:
